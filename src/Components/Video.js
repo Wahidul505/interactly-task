@@ -92,7 +92,7 @@ const Video = ({ children, heading }) => {
                     </button>
                 </div>
                 <div>
-                    {currentTime < 2 ? <h1 className='text-white font-semibold ml-6 lg:ml-12 lg:mt-5 text-xl lg:text-3xl mt-2'>{heading}</h1> : <></>}
+                    {currentTime < 2 ? <h1 className='text-white font-semibold ml-6 lg:ml-12 lg:mt-5 text-xl lg:text-4xl mt-2'>{heading}</h1> : <></>}
                 </div>
             </div>
             <button
