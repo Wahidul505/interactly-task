@@ -6,7 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 import { RiFullscreenExitFill } from 'react-icons/ri';
 import { RiFullscreenFill } from 'react-icons/ri';
 
-const Video = ({ children }) => {
+const Video = ({ children, heading }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [showPlayBtn, setShowPlayBtn] = useState(true);
     const [duration, setDuration] = useState(0);
@@ -69,20 +69,20 @@ const Video = ({ children }) => {
                 <div className='bg-[#706f70] h-2 w-full shadow-lg shadow-black '>
                     <div style={{ width: `${progress}%` }} className='bg-primary h-full'></div>
                 </div>
-                <div className='flex gap-3 justify-end md:px-10 mt-10 text-white font-semibold text-base items-center'>
-                    <span>{Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60)} / {Math.floor(duration / 60)}:{Math.floor(duration % 60)}</span>
+                <div className='flex gap-3 justify-end lg:px-10 px-4 lg:mt-10 mt-6 text-white font-semibold text-base items-center'>
+                    <span className='text-lg'>{Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60)} / {Math.floor(duration / 60)}:{Math.floor(duration % 60)}</span>
                     <button
-                        className='border-2 border-white rounded w-10 text-sm hover:scale-105 transition-transform '>
+                        className='border-2 border-white rounded w-8 text-sm hover:scale-105 transition-transform '>
                         CC
                     </button>
                     <button
                         onClick={handlePlaybackSpeed}
-                        className='border-2 border-white rounded w-10 text-sm hover:scale-105 transition-transform '>
+                        className='border-2 border-white rounded w-8 text-sm hover:scale-105 transition-transform '>
                         {speed}x
                     </button>
                     <button
                         onClick={() => setFullScreen(!fullScreen)}
-                        className='border-2 border-white rounded w-10 text-sm hover:scale-105 transition-transform flex justify-center'>
+                        className='border-2 border-white rounded w-8 text-sm hover:scale-105 transition-transform flex justify-center'>
                         {
                             fullScreen ?
                                 <RiFullscreenExitFill className='text-xl' />
@@ -90,6 +90,9 @@ const Video = ({ children }) => {
                                 <RiFullscreenFill className='text-xl' />
                         }
                     </button>
+                </div>
+                <div>
+                    {currentTime < 2 ? <h1 className='text-white font-semibold ml-6 lg:ml-12 lg:mt-5 text-xl lg:text-3xl mt-2'>{heading}</h1> : <></>}
                 </div>
             </div>
             <button

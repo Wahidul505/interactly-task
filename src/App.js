@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   const navigate = useSelector(state => state.navigate);
-  console.log(navigate)
+  
   return (
     <div className="App">
       {navigate.welcome && <Home />}
