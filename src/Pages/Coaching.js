@@ -21,7 +21,6 @@ const Coaching = () => {
                 !navigate.form ?
                     <ButtonContainer>
                         <span
-                            className='w-full'
                             onClick={() => dispatch(setForm({ coaching: true, signUp: false }))}>
                             <PrimaryButton>Download "Campaign Structure Guide"</PrimaryButton>
                         </span>
