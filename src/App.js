@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Pages/Home';
+import Logo from './Components/Logo';
+import Coaching from './Pages/Coaching';
+import { useSelector } from 'react-redux';
+import SignUp from './Pages/SignUp';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
+  const navigate = useSelector(state => state.navigate);
+  console.log(navigate)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {navigate.welcome && <Home />}
+      {navigate.coaching && <Coaching />}
+      {navigate.signUp && <SignUp />}
+      <Logo />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }
