@@ -1,7 +1,7 @@
 # Interactly Task
 
 
-## [Live Link](https://github.com/facebook/create-react-app).
+## [Live Link](https://video-app-task.netlify.app/).
 
 ## Features and Functionalities:
 
